@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /projet/AIV/MediaEval/2023/data</title>
+ </head>
+ <body>
+<h1>Index of /projet/AIV/MediaEval/2023/data</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=D">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/projet/AIV/MediaEval/2023/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="%3cTeam_name%3e/">&lt;Team_name&gt;/</a></td><td align="right">2022-05-03 19:26  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="MD5SUMS">MD5SUMS</a></td><td align="right">2022-05-03 19:31  </td><td align="right">113K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/layout.gif" alt="[   ]"></td><td><a href="Particular_conditions2022.pdf">Particular_conditions2022.pdf</a></td><td align="right">2022-06-07 10:48  </td><td align="right"> 81K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="classificationTask/">classificationTask/</a></td><td align="right">2022-05-03 19:32  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="detectionTask/">detectionTask/</a></td><td align="right">2022-05-03 19:32  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="evaluation.py">evaluation.py</a></td><td align="right">2022-05-03 19:31  </td><td align="right"> 19K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="verif_submission.py">verif_submission.py</a></td><td align="right">2022-09-20 17:28  </td><td align="right">7.1K</td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+</body></html>
