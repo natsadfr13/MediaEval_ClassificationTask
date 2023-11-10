@@ -4,30 +4,29 @@ from constants import *
 from services.plot_loss_and_accuracy import plotLossAndAccuracy
 from services.plot_confusion_matrix import plotConfusionMatrix
 from services.save_model import saveModel
-from services.splitTrainTest import splitTrainTest
 from services.prepare_data_for_training import prepare_data_for_training
+from services.splitTrainTest import splitTrainTest
 from keras.models import Sequential
 from keras.layers import Dense, Flatten
 from keras.layers import Conv2D, AveragePooling2D
 from keras import optimizers
 from keras.utils import to_categorical
 
-def trainCNN(trickList):
-    ### Split data into training and test set
-    trickListTrain, trickListTest = splitTrainTest(trickList, test_size=0.2, random_state=42)
-    ### Create a validation set
-    trickListTrain, trickListVal = splitTrainTest(trickListTrain, test_size=0.1, random_state=42)
+def trainCNN(listStrokesTrain, listStrokesValidation):
 
-    X_train, y_train, y_train_encoded = prepare_data_for_training(trickListTrain)
+    ### Create a validation set
+    listTrain, listVal = splitTrainTest(listStrokesTrain, test_size=0.1, random_state=42)
+
+    X_train, y_train, y_train_encoded = prepare_data_for_training(listTrain)
     X_train = X_train.reshape(X_train.shape[0], X_train.shape[1], X_train.shape[2], 1)
 
-    X_val, y_val, y_val_encoded = prepare_data_for_training(trickListVal)
+    X_val, y_val, y_val_encoded = prepare_data_for_training(listVal)
     X_val = X_val.reshape(X_val.shape[0], X_val.shape[1], X_val.shape[2], 1)
 
-    X_test, y_test, y_test_encoded = prepare_data_for_training(trickListTest)
+    X_test, y_test, y_test_encoded = prepare_data_for_training(listStrokesValidation)
     X_test = X_test.reshape(X_test.shape[0], X_test.shape[1], X_test.shape[2], 1)
 
-    nb_classes = len(TRICK_TO_CLASS)
+    nb_classes = len(STROKE_TO_CLASS)
     ### Convert class vectors to binary class matrices
     Y_train = to_categorical(y_train_encoded, nb_classes)
     Y_val = to_categorical(y_val_encoded, nb_classes)
@@ -64,4 +63,4 @@ def trainCNN(trickList):
     print("Prediction time: ", time.time() - time1)
     y_pred = np.argmax(y_pred, axis=1)
     print("score : ", temporalCNNmodel.evaluate(X_test, Y_test, verbose=0)[1])
-    plotConfusionMatrix(y_test_encoded, y_pred, TRICK_TO_CLASS)
+    plotConfusionMatrix(y_test_encoded, y_pred, STROKE_TO_CLASS)

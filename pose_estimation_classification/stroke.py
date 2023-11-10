@@ -29,9 +29,9 @@ class Stroke:
 
         self.dimension(MAX_SIZE_STROKE)
 
-        self.removeNan()
-        for c in self.data.columns:
-            self.removePeaks(c, 30)
+        # self.removeNan()
+        # for c in SELECTED_FEATURES_PLOT:
+        #     self.removePeaks(c, 50)
 
         #self.minMaxScaling()
         self.isNormalized = True
@@ -72,5 +72,4 @@ class Stroke:
 
     def removeNan(self):
             self.data[self.data == 0.0] = np.nan
-            #zero_transitions = self.data.isnull() & self.data.shift(-1).notnull()
             self.data.interpolate(method='linear', inplace=True)

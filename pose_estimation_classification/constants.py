@@ -189,3 +189,14 @@ SELECTED_TRICKS = ['Serve Forehand Backspin',
                 'Defensive Backhand Push',
                 'Defensive Backhand Block',
                 'Defensive Backhand Backspin']
+
+SELECTED_FEATURES_PLOT = [
+                  "5_conf", "5_x_n", "5_y_n",
+                  "6_conf", "6_x_n", "6_y_n",
+                  "7_conf", "7_x_n", "7_y_n",
+                  "8_conf", "8_x_n", "8_y_n",
+                  "9_conf", "9x_n", "9_y_n",
+                  "10_conf", "10_x_n", "10_y_n",
+                  "11_conf", "11_x_n", "11_y_n",
+                  "12_conf", "12_x_n", "12_y_n",
+            ]

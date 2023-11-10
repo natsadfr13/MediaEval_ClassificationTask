@@ -1,16 +1,15 @@
 ### Import libraries
-from structure.constants import *
-from structure.services.plot_confusion_matrix import plotConfusionMatrix
-from structure.services.splitTrainTest import splitTrainTest
-from structure.services.prepare_data_for_training import prepare_data_for_training
+from constants import *
+from services.plot_confusion_matrix import plotConfusionMatrix
+from services.splitTrainTest import splitTrainTest
+from services.prepare_data_for_training import prepare_data_for_training
 from sktime.classification.shapelet_based import ShapeletTransformClassifier
 
-def trainShapelet(trickList):
-    ### Split data into training and test set
-    trickListTrain, trickListTest = splitTrainTest(trickList, test_size=0.2, random_state=42)
-    X_train, y_train, y_train_encoded = prepare_data_for_training(trickListTrain)
+def trainShapelet(listStrokesTrain, listStrokesValidation):
+    
+    X_train, y_train, y_train_encoded = prepare_data_for_training(listStrokesTrain)
 
-    X_test, y_test, y_test_encoded = prepare_data_for_training(trickListTest)
+    X_test, y_test, y_test_encoded = prepare_data_for_training(listStrokesValidation)
     
     # Create a ShapeletTransformClassifier
     shapelet = ShapeletTransformClassifier(n_shapelet_samples=1000, batch_size=100)
@@ -26,7 +25,7 @@ def trainShapelet(trickList):
     print(y_pred)
     print(y_test_encoded)
     print(shapelet.score(X_test, y_test_encoded))
-    plotConfusionMatrix(y_test_encoded, y_pred, listClasses=TRICK_TO_CLASS)
+    plotConfusionMatrix(y_test_encoded, y_pred, listClasses=STROKE_TO_CLASS)
 
     #shapelet.save(PATH_TO_MODELS+"shapelet_80")
 

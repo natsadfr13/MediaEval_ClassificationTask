@@ -2,7 +2,6 @@
 import numpy as np
 from constants import *
 from services.plot_confusion_matrix import plotConfusionMatrix
-#from services.splitTrainTest import splitTrainTest
 from sktime.classification.deep_learning.inceptiontime import InceptionTimeClassifier
 from services.prepare_data_for_training import prepare_data_for_training
 

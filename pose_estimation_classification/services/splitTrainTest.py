@@ -1,6 +1,6 @@
 import numpy as np
 
-def splitTrainTest(tricks, test_size=0.2, random_state=0):
+def splitTrainTest(strokes, test_size=0.2, random_state=0):
     """
     Split data into training and test set
 
@@ -19,17 +19,17 @@ def splitTrainTest(tricks, test_size=0.2, random_state=0):
         trickListTrain, trickListTest
 
     """
-    trickDict = {}
-    for trick in tricks:
-            if trick.label not in trickDict:
-                    trickDict[trick.label] = []
-            trickDict[trick.label].append(trick)
-    trickListTrain = []
-    trickListTest = []
-    for key in trickDict:
+    strokeDict = {}
+    for stroke in strokes:
+            if stroke.label not in strokeDict:
+                    strokeDict[stroke.label] = []
+            strokeDict[stroke.label].append(stroke)
+    strokeListTrain = []
+    strokeListTest = []
+    for key in strokeDict:
             if random_state:
                     np.random.seed(random_state)
-            np.random.shuffle(trickDict[key])
-            trickListTrain += trickDict[key][int(len(trickDict[key])*test_size):]
-            trickListTest += trickDict[key][:int(len(trickDict[key])*test_size)]
-    return trickListTrain, trickListTest
+            np.random.shuffle(strokeDict[key])
+            strokeListTrain += strokeDict[key][int(len(strokeDict[key])*test_size):]
+            strokeListTest += strokeDict[key][:int(len(strokeDict[key])*test_size)]
+    return strokeListTrain, strokeListTest

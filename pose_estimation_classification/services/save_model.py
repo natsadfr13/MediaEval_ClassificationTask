@@ -1,5 +1,5 @@
 import os
-from structure.constants import PATH_TO_MODELS
+from constants import PATH_TO_MODELS
 
 def saveModel(model, modelName):
 
