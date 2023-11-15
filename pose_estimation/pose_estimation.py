@@ -24,10 +24,13 @@ def pose_estimation_video(model, video_path: str, csv_path: str):
             result = result[0].cpu()
 
             # Save relevent data
-            kpts = np.concatenate((result.keypoints.numpy()[0].data, result.keypoints.numpy()[0].xyn), axis=2)
-            kpts = np.reshape(kpts, (1, np.product(kpts.shape)))
-            boxe = np.concatenate((result.boxes.numpy()[0].conf, result.boxes.numpy()[0].xywh[0], result.boxes.numpy()[0].xywhn[0]), axis=0)
-            total = np.concatenate((boxe, kpts[0]), axis=0)
+            try:
+                kpts = np.concatenate((result.keypoints.numpy()[0].data, result.keypoints.numpy()[0].xyn), axis=2)
+                kpts = np.reshape(kpts, (1, np.product(kpts.shape)))
+                boxe = np.concatenate((result.boxes.numpy()[0].conf, result.boxes.numpy()[0].xywh[0], result.boxes.numpy()[0].xywhn[0]), axis=0)
+                total = np.concatenate((boxe, kpts[0]), axis=0)
+            except:
+                total = np.zeros(94)
 
             results.append(total)
 
