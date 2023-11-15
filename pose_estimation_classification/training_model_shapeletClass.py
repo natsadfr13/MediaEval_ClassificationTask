@@ -27,7 +27,7 @@ def trainShapelet(listStrokesTrain, listStrokesValidation):
     print(shapelet.score(X_test, y_test_encoded))
     plotConfusionMatrix(y_test_encoded, y_pred, listClasses=STROKE_TO_CLASS)
 
-    shapelet.save(PATH_TO_MODELS+"shapelet_80")
+    shapelet.save(PATH_TO_MODELS+"shapelet_80final")
 
 
 
