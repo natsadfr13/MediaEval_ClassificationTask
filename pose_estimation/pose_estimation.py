@@ -93,3 +93,21 @@ def pose_estimation_dataset(model, pathToData: str, pathToOutput: str):
                                         print("Erreur fichier: "+pathToFile)
                                         listeErreur.append(pathToFile)
     return listeErreur
+
+def pose_estimation_testdata(model, pathToTestData: str, pathToOutputFolder: str):
+    listeErreur = []
+
+    for file in sorted(os.listdir(pathToTestData)):
+        if (not file.startswith(".")) and (file.endswith(".mp4")):
+            pathToFile = os.path.join(pathToTestData, file)
+            CSVFileName = file[:len(file) - 4]
+            pathToCSV = os.path.join(pathToOutputFolder, CSVFileName+".csv")
+            if not os.path.exists(pathToCSV):
+                print(pathToFile)
+                try:
+                    pose_estimation_video(model, pathToFile, pathToCSV)
+                except:
+                    print("Erreur fichier: "+pathToFile)
+                    listeErreur.append(pathToFile)
+
+    return listeErreur
