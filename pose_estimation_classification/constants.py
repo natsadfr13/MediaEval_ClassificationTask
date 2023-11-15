@@ -60,7 +60,7 @@ NB_STROKES = len(STROKE_TO_CLASS.keys())
 
 ## --- Paths to data ---
 PATH_TO_DATA_POSE_ESTIMATION = './dataSetCSV'
-PATH_TO_MODELS = "./models/"
+PATH_TO_MODELS = "./models"
 
 MAX_SIZE_STROKE = 200 
 
@@ -69,11 +69,7 @@ NORMALIZATION_COLUMN = "1_x"
 ## --- Time sampling
 WANTED_SAMPLING_TIMESTEP = 0.01 #s
 
-SELECTED_FEATURES = ["box_conf", "box_x_n", "box_y_n", "box_w_n", "box_h_n",
-                  "1_conf","1_x_n", "1_y_n",
-                  "2_conf", "2_x_n", "2_y_n",
-                  "3_conf", "3_x_n", "3_y_n",
-                  "4_conf", "4_x_n", "4_y_n",
+SELECTED_FEATURES = [
                   "5_conf", "5_x_n", "5_y_n",
                   "6_conf", "6_x_n", "6_y_n",
                   "7_conf", "7_x_n", "7_y_n",
@@ -82,11 +78,6 @@ SELECTED_FEATURES = ["box_conf", "box_x_n", "box_y_n", "box_w_n", "box_h_n",
                   "10_conf", "10_x_n", "10_y_n",
                   "11_conf", "11_x_n", "11_y_n",
                   "12_conf", "12_x_n", "12_y_n",
-                  "13_conf", "13_x_n", "13_y_n",
-                  "14_conf", "14_x_n", "14_y_n",
-                  "15_conf", "15_x_n", "15_y_n",
-                  "16_conf", "16_x_n", "16_y_n",
-                  "17_conf", "17_x_n", "17_y_n",
             ]
 
 # Hands
@@ -188,7 +179,8 @@ SELECTED_TRICKS = ['Serve Forehand Backspin',
 
                 'Defensive Backhand Push',
                 'Defensive Backhand Block',
-                'Defensive Backhand Backspin']
+                'Defensive Backhand Backspin',
+                'Negative']
 
 SELECTED_FEATURES_PLOT = [
                   "5_conf", "5_x_n", "5_y_n",

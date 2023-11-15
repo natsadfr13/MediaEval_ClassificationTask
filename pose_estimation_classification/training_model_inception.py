@@ -19,7 +19,7 @@ def trainInception(listStrokesTrain, listStrokesValidation):
     incep.fit(X_train, y_train_encoded)
     print("Time to fit: ", time.time() - time1)
     # Save the classifier
-    #incep.save(PATH_TO_MODELS+"inception_03_10_2023_90%")
+    incep.save(PATH_TO_MODELS+"inception_03_10_2023_90%")
 
     # Predict the labels for the test set
     time1 = time.time()
